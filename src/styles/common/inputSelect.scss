@@ -1,0 +1,27 @@
+@import './vars.scss';
+
+.input-container {
+    display: flex;
+    padding-top: 40px ;
+    justify-content: space-between;
+    max-width: 560px;
+
+    .input__title {
+        font-family: Arial;
+        font-size: 21px;
+        font-weight: 400;
+        line-height: 19px;
+        align-self: center;
+        padding-right: 10px;
+    }
+
+    .input__list {
+        color:black;
+        width: 336px;
+        padding: 6px 12px;
+        padding-right: 0px;
+        align-self: end;
+        border: 1px solid $advanced-font-color;
+        box-sizing: border-box;
+    }
+}

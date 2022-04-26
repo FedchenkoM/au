@@ -1,0 +1,86 @@
+@import '../../styles/common/mixin.scss';
+@import '../../styles/common/vars.scss';
+@import '../../styles/common/reset.scss';
+
+.form {
+    @include container;
+    padding-top: 90px;
+
+    .inputs-select-container {
+        padding-bottom: 40px;
+        &:last-child{
+            border-bottom: 1px solid $advanced-font-color;
+        }
+    }
+
+    &__header {
+        display: flex;
+        max-width: 727px;
+        font-family: 'Arial';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 34px;
+
+        @media screen and(max-width: 455px) {
+            display: block;
+        }
+
+        &_hello {
+            color: $third-font-color;
+        }
+
+        &__user-contaner {
+            width: 100%;
+        }
+
+        &__user {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__user_status {
+            margin-top: 10px;
+            padding: 12px;
+            position: relative;
+            max-height: 46px;
+            max-width: 503px;
+            background-color: $status-bg-color;
+
+            font-family: Arial;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 22px;
+
+            input {
+                color: $third-font-color;
+                width: 100%;
+                padding: 0 2px;
+            }
+
+            .arrow {
+                position: absolute;
+                width: 11px;
+                height: 11px;
+                background-color: $status-bg-color;
+                top: -6px;
+                transform: rotate(45deg);
+                margin-left: 3px;
+            }
+        }
+
+        &__change-status {
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 12px;
+            color: $details-color;
+            align-self: end;
+            border-bottom: 1px dashed $details-color;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}

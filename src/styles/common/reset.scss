@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+}
+
+input {
+    all: unset;
+}
+
+select {
+    appearance: none;
+    border: none;
+    width: 100%;
+    font-size: inherit;
+    line-height: inherit;
+    background: url('../../assets/images/arrow.svg') no-repeat 98%;
+}
