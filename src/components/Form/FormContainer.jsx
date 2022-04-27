@@ -40,8 +40,6 @@ const FormContainer = () => {
         } else if(input === 'password') {
             setPasswordValid(value.length >= 5)
         } else if(input === 'confirmPassword') {
-            console.log(stateForm.password);
-            console.log(value);
             setPasswordConfirmValid(stateForm.password === value)
         }
     }

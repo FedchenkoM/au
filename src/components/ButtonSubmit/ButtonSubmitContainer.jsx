@@ -8,12 +8,13 @@ const ButtonSubmitContainer = ({ stateForm }) => {
     const handlerUpdate = () => {
         if (Object.values(stateForm).some(el => el === '')
             || stateForm.password !== stateForm.confirmPassword) {
-                setFormValid(true)
-                return
+            setFormValid(true)
+            return
         } else {
-        setLastUpdate(currentDateToString())
-        setFormValid(false)
-        console.log(JSON.stringify(stateForm))}
+            setLastUpdate(currentDateToString())
+            setFormValid(false)
+            console.log(JSON.stringify(stateForm))
+        }
     }
     return (
         <>
