@@ -1,25 +1,12 @@
 import './form.scss';
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import InputSelectCountryContainer from '../InputSelect/InputSelectCountry/InputSelectCountryContainer';
 import InputSelectUniversityContainer from '../InputSelect/inputSelectUniversity/InputSelectUniversityContainer';
-import InputPasswordContainer from '../InputPassword/InputPasswordContainer';
+import InputContainer from '../Input/InputContainer';
 import InputCheckboxContainer from '../InputCheckbox/InputCheckboxContainer';
 
-const Form = ({ status, handleChangeStatus }) => {
-  const initialStateForm = {
-    cityName: '',
-    university: '',
-    password: '',
-    confirmPassword: '',
-    email: '',
-    confirmation: false,
-  }
-  let [stateForm, setStateForm] = useState(initialStateForm)
+const Form = ({ status, handleChangeStatus, handleFormChange }) => {
   let [statusChanged, setStatusChanged] = useState(false)
-
-  // useEffect(() => {
-  //   console.log(stateForm);
-  // })
 
   const handleSetStatus = () => {
     setStatusChanged(!statusChanged)
@@ -28,14 +15,6 @@ const Form = ({ status, handleChangeStatus }) => {
   const handleSetStatusText = (e) => {
     setStatusChanged(!statusChanged)
     handleChangeStatus(e.target.value)
-  }
-
-  const handleFormChange = (input, value) => {
-    let newState = { [input]: value }
-    setStateForm(stateForm => ({
-      ...stateForm,
-      ...newState
-    }))
   }
 
   return (
@@ -67,17 +46,17 @@ const Form = ({ status, handleChangeStatus }) => {
         <InputSelectUniversityContainer
           handler={handleFormChange} />
       </div>
-      <InputPasswordContainer
+      <InputContainer
         type="password"
         handler={handleFormChange}
         title="Пароль"
         name="password" />
-      <InputPasswordContainer
+      <InputContainer
         type="password"
         handler={handleFormChange}
         title="Подтвердите пароль"
         name="confirmPassword" />
-      <InputPasswordContainer
+      <InputContainer
         type="email"
         handler={handleFormChange}
         title="Электронная почта"
@@ -88,7 +67,7 @@ const Form = ({ status, handleChangeStatus }) => {
         title="Я согласен"
         name="confirmation"
       />
-      
+
     </div>
   )
 }

@@ -1,0 +1,30 @@
+@import '../../styles/common/vars.scss';
+
+.submit-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+    input {
+        padding: 5px;
+        box-sizing: border-box;
+        text-align: center;
+        color: white;
+        width: 120px;
+        height: 40px;
+        background-color: #71C838;
+        cursor: pointer;
+        margin-right: 12px;
+
+        &:active {
+            background-color: #2f5416;
+        }
+    }
+
+    .submit__date {
+        width: 350px;
+        color: $advanced-font-color;
+    }
+
+}

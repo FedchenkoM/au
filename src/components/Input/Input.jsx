@@ -1,7 +1,7 @@
 import React from 'react';
-import './inputPassword.scss'
+import './input.scss'
 
-const InputPassword = ({ handler, title, name, type }) => {
+const Input = ({ handler, title, name, type }) => {
     const passwordsHandler = (e) => {
         handler(name, e.target.value)
     }
@@ -28,4 +28,4 @@ const InputPassword = ({ handler, title, name, type }) => {
 
     );
 };
-export default InputPassword;
+export default Input;

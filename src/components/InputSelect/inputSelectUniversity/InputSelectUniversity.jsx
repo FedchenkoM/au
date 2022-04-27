@@ -10,6 +10,7 @@ const InputSelectUniversity = ({ universities, title, handler }) => {
             <span className="input__title">{title}</span>
             <select className="input__list"
                 onChange={(e) => handleChangeUniversity(e)}>
+                <option></option>
                 {universities.map((uni) =>
                     <option className="input__list"
                         key={uni}>{uni}</option>)}
