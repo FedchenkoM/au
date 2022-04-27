@@ -2,7 +2,7 @@
 
 .input-container {
     display: flex;
-    padding-top: 40px ;
+    padding-top: 40px;
     justify-content: space-between;
     max-width: 560px;
 
@@ -16,12 +16,24 @@
     }
 
     .input__list {
-        color:black;
+        color: black;
         width: 336px;
         padding: 6px 12px;
         padding-right: 0px;
         align-self: end;
         border: 1px solid $advanced-font-color;
         box-sizing: border-box;
+    }
+
+    @media screen and (max-width: 582px) {
+        padding-top: 20px;
+        width: 100%;
+        align-self: center;
+        flex-direction: column;
+
+        .input__list {
+            align-self: center;
+            width: 100%;
+        }
     }
 }

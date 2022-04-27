@@ -1,0 +1,28 @@
+@import '../../styles/common/inputSelect.scss';
+@import '../../styles/common/vars.scss';
+
+.checkbox {
+    justify-content: start;
+
+    .input__title {
+        margin-right: 100px;
+    }
+
+    input {
+        background-color: initial;
+        cursor: default;
+        appearance: auto;
+        box-sizing: border-box;
+        margin: 3px 3px 3px 4px;
+        padding: initial;
+        border: initial;
+    }
+
+    @media screen and (max-width: 582px) {
+        flex-direction: row;
+
+        .input__title {
+            margin-right: 50px;
+        }
+    }
+}

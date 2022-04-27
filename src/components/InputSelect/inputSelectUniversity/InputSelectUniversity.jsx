@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './inputSelectUniversity.scss';
 
 const InputSelectUniversity = ({ universities, title, handler }) => {
-    let [curUniversity, setCurUniversity] = useState()
     const handleChangeUniversity = (e) => {
-        setCurUniversity(e.target.value)
-        handler('university', curUniversity)
+        handler('university', e.target.value)
     }
     return (
         <div className="input-container">
@@ -16,7 +14,6 @@ const InputSelectUniversity = ({ universities, title, handler }) => {
                     <option className="input__list"
                         key={uni}>{uni}</option>)}
             </select>
-
         </div>
     );
 };
