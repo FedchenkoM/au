@@ -6,7 +6,8 @@ import InputContainer from '../Input/InputContainer';
 import InputCheckboxContainer from '../InputCheckbox/InputCheckboxContainer';
 
 const Form = (
-  { status,
+  {
+    status,
     handleChangeStatus,
     handleFormChange,
     emailValid,
@@ -48,24 +49,26 @@ const Form = (
           </div>
         </div>
       </div>
-      <div className="inputs-select-container">
+      <div className="line">
         <InputSelectCountryContainer
           handler={handleFormChange} />
         <InputSelectUniversityContainer
           handler={handleFormChange} />
       </div>
-      <InputContainer
-        valid={passwordValid}
-        type="password"
-        handler={handleFormChange}
-        title="Пароль"
-        name="password" />
-      <InputContainer
-        valid={passwordConfirmValid}
-        type="password"
-        handler={handleFormChange}
-        title="Подтвердите пароль"
-        name="confirmPassword" />
+      <div className="line">
+        <InputContainer
+          valid={passwordValid}
+          type="password"
+          handler={handleFormChange}
+          title="Пароль"
+          name="password" />
+        <InputContainer
+          valid={passwordConfirmValid}
+          type="password"
+          handler={handleFormChange}
+          title="Подтвердите пароль"
+          name="confirmPassword" />
+      </div>
       <InputContainer
         valid={emailValid}
         type="email"

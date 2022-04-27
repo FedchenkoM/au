@@ -24,7 +24,7 @@ const ButtonSubmitContainer = ({ stateForm }) => {
                 handlerUpdate={handlerUpdate}
                 stateForm={stateForm} />
             {formValid
-                ? <div className="error__messages">Поля должны быть заполнены</div>
+                ? <div className="error__messages">Поля должны быть заполнены корректно</div>
                 : ''
             }
         </>

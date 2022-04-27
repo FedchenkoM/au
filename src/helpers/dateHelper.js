@@ -13,9 +13,10 @@ export const currentDateToString = () => {
         'ноября',
         'декабря'
     ]
-    const today = new Date()
 
-    let y, m, d, h, min, sec
+    let today, y, m, d, h, min, sec
+
+    today = new Date()
     y = today.getFullYear()
     m = today.getMonth()
     d = today.getDate()

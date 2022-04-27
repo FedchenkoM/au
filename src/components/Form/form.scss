@@ -6,12 +6,11 @@
     @include container;
     padding-top: 90px;
 
-    .inputs-select-container {
+    .line {
         padding-bottom: 40px;
-        &:last-child{
-            border-bottom: 1px solid $advanced-font-color;
-        }
+        border-bottom: 1px solid $advanced-font-color;
     }
+    
 
     &__header {
         display: flex;

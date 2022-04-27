@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Form from './Form';
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux';
 import { changeStatus } from '../../redux/actions/changeStatus';
 import ButtonSubmitContainer from '../ButtonSubmit/ButtonSubmitContainer';
 import { emailValidator } from '../../helpers/validationFormHelper';
@@ -13,7 +13,6 @@ const initialStateForm = {
     email: '',
     confirmation: false,
 }
-
 
 const FormContainer = () => {
     let [stateForm, setStateForm] = useState(initialStateForm)
@@ -28,7 +27,6 @@ const FormContainer = () => {
         return dispatch(changeStatus(textStatus))
     }
 
-
     const handleFormChange = (input, value) => {
         let newState = { [input]: value }
         setStateForm(stateForm => ({
@@ -37,10 +35,12 @@ const FormContainer = () => {
         }))
         if (input === 'email') {
             setEmailValid((emailValidator(value) !== null))
-        } else if(input === 'password') {
+        } else if (input === 'password') {
             setPasswordValid(value.length >= 5)
-        } else if(input === 'confirmPassword') {
+        } else if (input === 'confirmPassword') {
             setPasswordConfirmValid(stateForm.password === value)
+        } else {
+            return
         }
     }
     return (

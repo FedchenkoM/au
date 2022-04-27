@@ -3,7 +3,6 @@ import './input.scss'
 
 const Input = ({ handler, title, name, type }) => {
     let [isEmpty, setIsEmpty] = useState(false)
-
     const passwordsHandler = (e) => {
         setIsEmpty(e.target.value.length <= 0)
         handler(name, e.target.value)
