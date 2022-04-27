@@ -1,13 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './buttonSubmit.scss';
-import { currentDateToString } from '../../helpers/dateHelper'
 
-const ButtonSubmit = ({ stateForm }) => {
-    let [lastUpdate, setLastUpdate] = useState('')
-    const handlerUpdate = () => {
-        setLastUpdate(currentDateToString())
-        console.log(JSON.stringify(stateForm));
-    }
+const ButtonSubmit = ({ lastUpdate, handlerUpdate }) => {
     return (
         <div className="submit-container">
             <input

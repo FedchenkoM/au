@@ -7,6 +7,10 @@
 
     .input-container {
         width: 560px;
+
+        .input__list.with_errors {
+            border-color: red;
+        }
     }
 
     .input__discription {
@@ -41,4 +45,11 @@
             align-self: center;
         }
     }
+}
+
+.error__messages {
+    display: flex;
+    justify-content: center;
+    color: red;
+    padding-bottom: 2px;
 }

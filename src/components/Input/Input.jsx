@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './input.scss'
 
 const Input = ({ handler, title, name, type }) => {
+    let [isEmpty, setIsEmpty] = useState(false)
+
     const passwordsHandler = (e) => {
+        setIsEmpty(e.target.value.length <= 0)
         handler(name, e.target.value)
     }
     const inputDiscriptions = {
@@ -11,20 +14,30 @@ const Input = ({ handler, title, name, type }) => {
         'email': 'Можно изменить адрес, указанный при регистрации. '
     }
     return (
-        <div className="inputs-password-container">
+        <>
+            <div className="inputs-password-container">
 
-            <div className="input-container">
-                <span className="input__title">{title}</span>
-                <input
-                    type={type}
-                    className="input__list"
-                    onChange={(e) => passwordsHandler(e)} />
-            </div>
+                <div className="input-container">
+                    <span className="input__title">{title}</span>
+                    <input
+                        minLength={5}
+                        type={type}
+                        className={`input__list ${isEmpty ? 'with_errors' : ''}`}
+                        onChange={(e) => passwordsHandler(e)} />
+                </div>
 
-            <div className="input__discription">
-                {inputDiscriptions[name]}
+                <div className="input__discription">
+                    {inputDiscriptions[name]}
+                </div>
             </div>
-        </div>
+            <div className="error__messages">
+                {isEmpty
+                    ? 'Поле должно быть заполнено'
+                    :
+                    ''
+                }
+            </div>
+        </>
 
     );
 };

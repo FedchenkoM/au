@@ -5,7 +5,15 @@ import InputSelectUniversityContainer from '../InputSelect/inputSelectUniversity
 import InputContainer from '../Input/InputContainer';
 import InputCheckboxContainer from '../InputCheckbox/InputCheckboxContainer';
 
-const Form = ({ status, handleChangeStatus, handleFormChange }) => {
+const Form = (
+  { status,
+    handleChangeStatus,
+    handleFormChange,
+    emailValid,
+    passwordValid,
+    passwordConfirmValid
+  }
+) => {
   let [statusChanged, setStatusChanged] = useState(false)
 
   const handleSetStatus = () => {
@@ -47,16 +55,19 @@ const Form = ({ status, handleChangeStatus, handleFormChange }) => {
           handler={handleFormChange} />
       </div>
       <InputContainer
+        valid={passwordValid}
         type="password"
         handler={handleFormChange}
         title="Пароль"
         name="password" />
       <InputContainer
+        valid={passwordConfirmValid}
         type="password"
         handler={handleFormChange}
         title="Подтвердите пароль"
         name="confirmPassword" />
       <InputContainer
+        valid={emailValid}
         type="email"
         handler={handleFormChange}
         title="Электронная почта"
@@ -67,7 +78,6 @@ const Form = ({ status, handleChangeStatus, handleFormChange }) => {
         title="Я согласен"
         name="confirmation"
       />
-
     </div>
   )
 }
