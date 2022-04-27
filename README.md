@@ -1,2 +1,2 @@
-Вам сюда [http://localhost:3000](http://localhost:3000)
+Вам сюда [https://fedchenkom.github.io/au/index.html
 
